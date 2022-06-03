@@ -1,0 +1,14 @@
+<h1 class = "pt-4" >Login</h1>
+
+<%= form_with :url => "/sessions" do |form| %>
+  <p>
+    <%= form.label "email" %>
+    <%= form.text_field "email" %>
+    <%= form.label "password" %>
+    <%= form.password_field "password" %>
+  </p>
+  
+  <p>
+    <button type="button" class="btn btn-primary"><%= form.submit "Login" %></button>
+  </p>
+<% end %>
