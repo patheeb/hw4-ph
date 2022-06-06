@@ -3,14 +3,23 @@
 <% if @current_user%>
 
 
-
   <h2>My Posts</h2>
-  <% for post in @posts %>
-    <h3><%= post["title"] %></h3>
-    <h4><%= post["posted_on"] %></h4>
-    <p><%= post["description"] %></p>
-
-  <% end %>
+<div class="container">
+  <div class="row">
+      <% for post in @posts %>
+        <div class="col-4 md-4">
+        <h3><%= post["title"] %></h3>
+        <h4><%= post["posted_on"] %></h4>
+        <p><%= post["description"] %></p>
+        <% if post.uploaded_image.attached? %>
+          <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+        <% else %>
+        <img src="<%= post["image"] %>" class="img-fluid">
+        <% end %>
+      </div>
+      <% end %>
+   </div> 
+</div>
 
   <p>
     <a class="btn btn-primary" href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
@@ -20,5 +29,4 @@
     <a class="btn btn-secondary" href="/places">Back to All Places</a>
   </p>
 <%end%>
-
 
