@@ -23,8 +23,8 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: ph_hw4_final_production
-  username: ph_hw4_final
+  database: hw4_ph_final_production
+  username: hw4_ph_final
   password: <%= ENV["TACOGRAM_FINAL"] %>
   
   
