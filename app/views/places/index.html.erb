@@ -4,6 +4,7 @@
   <a class="btn btn-primary" href="/places/new">New place</a>
 </p>
 
+<!--
 <div class="container">
    <% for place in @places %>
   <div class="row">
@@ -14,12 +15,31 @@
   </div>
   <% end %>
 </div>
+-->
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
+-->
 
 
-
-<ul>
-  <% for place in @places %>
-    <li><a class="btn btn-secondary" href="/places/<%= place["id"] %>"><%= place["name"] %></a>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% for place in @places %>
+      <div class="col-3 m-4">
+        <a class="btn btn-secondary" href="/places/<%= place["id"] %>"><%= place["name"] %></a>
+      </div>
+    <% end %>
+  </div>
+</div>

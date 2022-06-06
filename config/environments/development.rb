@@ -8,6 +8,8 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -67,4 +69,8 @@ Rails.application.configure do
   
   # So we don't get the "Cannot render console" message in Gitpod
   config.web_console.whiny_requests = false
+
+    # indicate which service to use for attachments
+    config.active_storage.service = :local
+
 end
